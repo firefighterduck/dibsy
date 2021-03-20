@@ -5,7 +5,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let input = fs::read(&input_path)?;
 
     let (_, header) = bitmap_rs::DIBFile::parse(&input[..]).map_err(|_| "Nope".to_string())?;
-    println!("The file so far: {:?}", header);
+    println!("The file so far: {:#?}", header);
 
     Ok(())
 }

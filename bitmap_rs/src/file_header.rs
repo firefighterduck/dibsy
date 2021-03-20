@@ -6,14 +6,12 @@ enum Signature {
     #[debug(format = "BM")]
     BM,
     UnsupportedOS2,
-    Unsupported,
 }
 
 impl Signature {
     pub fn parse(input: Input) -> Result<Self> {
         use nom::{
             branch::alt,
-            bytes::complete::take,
             combinator::{value, verify},
             number::complete::le_u8,
             sequence::pair,
@@ -36,7 +34,6 @@ impl Signature {
             two_chars('C', 'P', Self::UnsupportedOS2),
             two_chars('I', 'C', Self::UnsupportedOS2),
             two_chars('P', 'T', Self::UnsupportedOS2),
-            value(Self::Unsupported, take(2_usize)),
         ))(input)?;
         Ok((input, sig))
     }
