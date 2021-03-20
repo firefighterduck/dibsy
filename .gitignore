@@ -1,2 +1,4 @@
-/target
+/target/
 /*.bmp
+*/target/
+*/Cargo.lock

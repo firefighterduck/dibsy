@@ -17,6 +17,7 @@ name = "bitmap_rs"
 version = "0.1.0"
 dependencies = [
  "custom_debug_derive",
+ "derive-try-from-primitive",
  "nom",
  "thiserror",
 ]
@@ -48,6 +49,17 @@ dependencies = [
  "proc-macro2",
  "syn",
  "synstructure",
+]
+
+[[package]]
+name = "derive-try-from-primitive"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "302ccf094df1151173bb6f5a2282fcd2f45accd5eae1bdf82dcbfefbc501ad5c"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]
